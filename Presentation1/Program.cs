@@ -1,5 +1,7 @@
 ﻿using Core.Constants;
 using Core.Helper;
+using Data.Repositories.Concrete;
+using Presentation1.Services;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 
@@ -7,6 +9,12 @@ namespace Presentation1
 {
     public static class Program
     {
+        private readonly static GroupService _groupService;
+
+        static Program()
+        {
+            _groupService = new GroupService();
+        }
         static void Main()
         {
             ConsoleHelper.WriteWithColor("---Welcome!---", ConsoleColor.Cyan);
@@ -39,64 +47,28 @@ namespace Presentation1
                         switch (number)
                         {
                             case (int)GroupOptions.CreateGroup:
-                                ConsoleHelper.WriteWithColor("---Enter name, please---", ConsoleColor.Cyan);
-                                string name = Console.ReadLine();
-
-                            MaxSizeDes: ConsoleHelper.WriteWithColor("---Enter group max - size,please---", ConsoleColor.Cyan);
-                                int maxSize;
-                                isSucceeded = int.TryParse(Console.ReadLine(), out maxSize);
-                                if (!isSucceeded)
-                                {
-                                    ConsoleHelper.WriteWithColor("Max size is not a correct format!", ConsoleColor.Red);
-                                    goto MaxSizeDes;
-                                }
-                                if (maxSize > 18)
-                                {
-                                    ConsoleHelper.WriteWithColor("Max size must be less than or equal to 18", ConsoleColor.Red);
-                                    goto MaxSizeDes;
-                                }
-
-                            StartDateDes: ConsoleHelper.WriteWithColor("Enter start date,please", ConsoleColor.Cyan);
-                                DateTime startDate;
-                                isSucceeded = DateTime.TryParseExact(Console.ReadLine(), "dd.MM.yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out startDate);
-                                if (!isSucceeded)
-                                {
-                                    ConsoleHelper.WriteWithColor("The start date is not a correct format!", ConsoleColor.Red);
-                                    goto StartDateDes;
-                                } 
-                            EndDateDes: ConsoleHelper.WriteWithColor("Enter end date,please", ConsoleColor.Cyan);
-                                DateTime endDate;
-                                isSucceeded = DateTime.TryParseExact(Console.ReadLine(), "dd.MM.yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out endDate);
-                                if (!isSucceeded)
-                                {
-                                    ConsoleHelper.WriteWithColor("The end date is not a correct format!", ConsoleColor.Red);
-                                    goto EndDateDes;
-                                }
-                                if (startDate > endDate)
-                                {
-                                    ConsoleHelper.WriteWithColor("The end date must be bigger than the start date", ConsoleColor.Red);
-                                    goto EndDateDes;
-                                }
-
-                                var group = new Core.Entities.Group
-                                {
-                                    Name = name,
-                                    MaxSize = maxSize,
-                                    StartDate= startDate,
-                                    EndDate= endDate,
-                                };
+                                _groupService.Create();
                                 break;
+
                             case (int)GroupOptions.UpdateGroup:
+
                                 break;
+
                             case (int)GroupOptions.DeleteGroup:
+                                _groupService.Delete();
                                 break;
+
                             case (int)GroupOptions.GetAllGroup:
-                                break;
+                                _groupService.GetAll();
+                                break
+                                    ;
                             case (int)GroupOptions.GetGroupbyID:
                                 break;
                             case (int)GroupOptions.GetGroupbyName:
                                 break;
+
                             case (int)GroupOptions.Exit:
+                                _groupService.Exit();
                                 break;
                             default:
                                 break;

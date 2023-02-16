@@ -10,6 +10,10 @@ namespace Data.Contexts
 {
     public static class DbContext
     {
+        static DbContext()
+        {
+            Groups = new List<Core.Entities.Group>();
+        }
         public static List<Core.Entities.Group> Groups { get; set; }
     }
 }

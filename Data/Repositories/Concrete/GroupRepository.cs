@@ -18,12 +18,13 @@ namespace Data.Repositories.Concrete
         }
         public Group Get(int id)
         {
-            return DbContext.Groups.FirstOrDefault(g => g.Id ==id);
+            return DbContext.Groups.FirstOrDefault(g => g.Id == id);
         }
         public void Add(Group group)
         {
             id++;
             group.Id = id;
+            group.CreatedAt= DateTime.Now;
             DbContext.Groups.Add(group);
         }
 

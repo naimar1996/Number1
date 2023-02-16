@@ -50,11 +50,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\repos\\AcademyApp\\Presentation1\\Presentation1.csproj",
+      "projectUniqueName": "C:\\Users\\user\\OneDrive\\Desktop\\Academy_2023\\Presentation1\\Presentation1.csproj",
       "projectName": "Presentation1",
-      "projectPath": "C:\\Users\\user\\source\\repos\\AcademyApp\\Presentation1\\Presentation1.csproj",
+      "projectPath": "C:\\Users\\user\\OneDrive\\Desktop\\Academy_2023\\Presentation1\\Presentation1.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\repos\\AcademyApp\\Presentation1\\obj\\",
+      "outputPath": "C:\\Users\\user\\OneDrive\\Desktop\\Academy_2023\\Presentation1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -71,8 +71,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\user\\source\\repos\\AcademyApp\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\user\\source\\repos\\AcademyApp\\Data\\Data.csproj"
+            "C:\\Users\\user\\OneDrive\\Desktop\\Academy_2023\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\user\\OneDrive\\Desktop\\Academy_2023\\Data\\Data.csproj"
             }
           }
         }

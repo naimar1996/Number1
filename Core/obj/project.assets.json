@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\repos\\AcademyApp\\Core\\Core.csproj",
+      "projectUniqueName": "C:\\Users\\user\\OneDrive\\Desktop\\Academy_2023\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "C:\\Users\\user\\source\\repos\\AcademyApp\\Core\\Core.csproj",
+      "projectPath": "C:\\Users\\user\\OneDrive\\Desktop\\Academy_2023\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\repos\\AcademyApp\\Core\\obj\\",
+      "outputPath": "C:\\Users\\user\\OneDrive\\Desktop\\Academy_2023\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
