@@ -20,6 +20,10 @@ namespace Data.Repositories.Concrete
         {
             return DbContext.Groups.FirstOrDefault(g => g.Id == id);
         }
+        public Group GetbyName(string name)
+        {
+            return DbContext.Groups.FirstOrDefault(g => g.Name.ToLower() == name.ToLower());
+        }
         public void Add(Group group)
         {
             id++;
@@ -27,10 +31,19 @@ namespace Data.Repositories.Concrete
             group.CreatedAt= DateTime.Now;
             DbContext.Groups.Add(group);
         }
-
         public void Update(Group group)
         {
-            throw new NotImplementedException();
+            var dbGroup = DbContext.Groups.FirstOrDefault(g => g.Id == id);
+            if (dbGroup != null)
+            {
+                dbGroup.Name = group.Name;
+                dbGroup.MaxSize = group.MaxSize;
+                dbGroup.StartDate = group.StartDate;
+                dbGroup.EndDate = group.EndDate;
+                dbGroup.ModifiedAt = DateTime.Now;
+            }
+
+
         }
         public void Delete(Group group)
         {
@@ -39,3 +52,6 @@ namespace Data.Repositories.Concrete
 
     }
 }
+
+
+

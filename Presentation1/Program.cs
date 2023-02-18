@@ -51,7 +51,7 @@ namespace Presentation1
                                 break;
 
                             case (int)GroupOptions.UpdateGroup:
-
+                                _groupService.GetUpdate();
                                 break;
 
                             case (int)GroupOptions.DeleteGroup:
@@ -63,13 +63,17 @@ namespace Presentation1
                                 break
                                     ;
                             case (int)GroupOptions.GetGroupbyID:
+                                _groupService.GetGroupbyID();
                                 break;
+
                             case (int)GroupOptions.GetGroupbyName:
+                                _groupService.GetGroupbyName();
                                 break;
 
                             case (int)GroupOptions.Exit:
                                 _groupService.Exit();
                                 break;
+
                             default:
                                 break;
                         }

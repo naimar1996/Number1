@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Core.Entities;
 
@@ -12,8 +11,8 @@ namespace Data.Contexts
     {
         static DbContext()
         {
-            Groups = new List<Core.Entities.Group>();
+            Groups = new List<Group>();
         }
-        public static List<Core.Entities.Group> Groups { get; set; }
+        public static List<Group> Groups { get; set; }
     }
 }
